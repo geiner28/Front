@@ -1,0 +1,84 @@
+<div class="flex min-h-screen bg-gradient-to-br from-sky-100 to-white">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-xl rounded-r-3xl p-6">
+    <h1 class="text-2xl font-bold text-blue-800 mb-8 text-center">Vitalia Admin</h1>
+    <nav class="flex flex-col gap-4">
+      <button (click)="seccion = 'medicos'" class="text-left text-blue-700 hover:bg-blue-100 p-3 rounded-xl font-medium transition">👨‍⚕️ Médicos</button>
+      <button (click)="seccion = 'usuarios'" class="text-left text-blue-700 hover:bg-blue-100 p-3 rounded-xl font-medium transition">👥 Usuarios</button>
+      <button (click)="seccion = 'pacientes'" class="text-left text-blue-700 hover:bg-blue-100 p-3 rounded-xl font-medium transition">🧑‍🦽 Pacientes</button>
+      <button (click)="seccion = 'citas'" class="text-left text-blue-700 hover:bg-blue-100 p-3 rounded-xl font-medium transition">📅 Citas Médicas</button>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="flex-1 p-10 overflow-y-auto">
+    <!-- Médicos -->
+    <section *ngIf="seccion === 'medicos'" class="max-w-4xl mx-auto bg-white shadow-2xl rounded-3xl p-8">
+      <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">Registro de Médico</h2>
+      <form [formGroup]="medicoForm" (ngSubmit)="onSubmit()" class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div>
+          <label class="block text-sm font-medium text-blue-700">Nombre</label>
+          <input formControlName="nombre" type="text"
+            class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-blue-700">Cédula</label>
+          <input formControlName="cedula" type="text"
+            class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-blue-700">Correo</label>
+          <input formControlName="correo" type="email"
+            class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-blue-700">Contraseña</label>
+          <input formControlName="contrasena" type="password"
+            class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+        </div>
+
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-medium text-blue-700">Especialidad</label>
+          <input formControlName="especialidad" type="text"
+            class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+        </div>
+
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-medium text-blue-700">Registro Profesional</label>
+          <input formControlName="registroProfesional" type="text"
+            class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+        </div>
+
+        <div class="sm:col-span-2 text-center mt-4">
+          <button type="submit"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-xl shadow-md transition">
+            Registrar Médico
+          </button>
+        </div>
+
+        <div *ngIf="mensaje" class="sm:col-span-2 text-center mt-4"
+             [ngClass]="{'text-green-700': !error, 'text-red-600': error}">
+          {{ mensaje }}
+        </div>
+      </form>
+    </section>
+
+    <!-- Usuarios -->
+    <section *ngIf="seccion === 'usuarios'" class="text-center mt-20 text-xl text-blue-700 font-semibold">
+      <p>🚧 Módulo de Usuarios en construcción</p>
+    </section>
+
+    <!-- Pacientes -->
+    <section *ngIf="seccion === 'pacientes'" class="text-center mt-20 text-xl text-blue-700 font-semibold">
+      <p>🚧 Módulo de Pacientes en construcción</p>
+    </section>
+
+    <!-- Citas Médicas -->
+    <section *ngIf="seccion === 'citas'" class="text-center mt-20 text-xl text-blue-700 font-semibold">
+      <p>🚧 Módulo de Citas Médicas en construcción</p>
+    </section>
+  </main>
+</div>
