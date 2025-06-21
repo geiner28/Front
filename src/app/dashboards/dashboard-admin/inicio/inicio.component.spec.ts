@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule, NgIf } from '@angular/common';
+import { PacienteComponent } from '../../../components/paciente/paciente.component'; // ajusta la ruta según tu estructura
 
 @Component({
   selector: 'app-inicio',
@@ -12,7 +13,8 @@ import { CommonModule, NgIf } from '@angular/common';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgIf
+    NgIf,
+    PacienteComponent
   ]
 })
 export class InicioComponent {

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgIf, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {CitasComponent} from '../../../components/citas/citas.component';
+
 @Component({
   selector: 'app-inicio',
-  imports: [CommonModule, FormsModule, NgIf, NgFor],
+  imports: [CommonModule, FormsModule, NgIf, NgFor, CitasComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })

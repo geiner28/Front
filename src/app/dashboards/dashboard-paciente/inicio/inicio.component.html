@@ -14,27 +14,7 @@
 
     <!-- Pedir Cita -->
     <section *ngIf="seccion === 'cita'" class="max-w-xl mx-auto">
-      <h2 class="text-3xl font-bold text-indigo-700 mb-6">📅 Solicitar Cita</h2>
-      <form (ngSubmit)="solicitarCita()" class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Fecha y Hora</label>
-          <input type="datetime-local" [(ngModel)]="nuevaCita.fecha" name="fecha" class="w-full mt-1 p-3 rounded-xl border shadow focus:outline-indigo-500" required>
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Especialidad</label>
-          <input type="text" [(ngModel)]="nuevaCita.especialidad" name="especialidad" class="w-full mt-1 p-3 rounded-xl border shadow focus:outline-indigo-500" required>
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Notas</label>
-          <textarea [(ngModel)]="nuevaCita.nota" name="nota" rows="3" class="w-full mt-1 p-3 rounded-xl border shadow focus:outline-indigo-500"></textarea>
-        </div>
-
-        <div class="text-center mt-6">
-          <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-xl shadow">Solicitar</button>
-        </div>
-      </form>
+      <app-citas></app-citas>
     </section>
 
     <!-- Diagnósticos -->
